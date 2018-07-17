@@ -42,13 +42,13 @@ unset https_proxy
 tempest_configuration () {
   sub_name=`date "+%H_%M_%S"`
   if [ -n "${OFFLINE}" ]; then
-    rally verify create-verifier --name tempest_verifier_$sub_name --type tempest --source $TEMPEST_REPO --system-wide --version $tempest_version
+    rally verify create-verifier --name tempest_verifier_$sub_name --type tempest --source $TEMPEST_REPO --system-wide --version $TEMPEST_VERSION
     cd /var/lib/
   else
     if [ -n "${PROXY}" ]; then
       export https_proxy=$PROXY
     fi
-    rally verify create-verifier --name tempest_verifier_$sub_name --type tempest --source $TEMPEST_REPO --version $tempest_version
+    rally verify create-verifier --name tempest_verifier_$sub_name --type tempest --source $TEMPEST_REPO --version $TEMPEST_VERSION
     unset https_proxy
   fi
   rally verify configure-verifier --show
