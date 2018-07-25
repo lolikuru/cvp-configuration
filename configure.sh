@@ -38,7 +38,7 @@ fi
 #rally verify add-verifier-ext --source https://github.com/openstack/heat-tempest-plugin
 unset https_proxy
 }
-
+tempest_version='16.1.0'
 tempest_configuration () {
   sub_name=`date "+%H_%M_%S"`
   if [ -n "${OFFLINE}" ]; then
