@@ -34,8 +34,8 @@ additional_tempest_plugins (){
 if [ -n "${PROXY}" ]; then
   export https_proxy=$PROXY
 fi
-#rally verify add-verifier-ext --source https://github.com/openstack/telemetry-tempest-plugin
-#rally verify add-verifier-ext --source https://github.com/openstack/heat-tempest-plugin
+rally verify add-verifier-ext --source https://github.com/openstack/telemetry-tempest-plugin
+rally verify add-verifier-ext --source https://github.com/openstack/heat-tempest-plugin
 unset https_proxy
 }
 tempest_version='16.1.0'
