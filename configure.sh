@@ -42,7 +42,7 @@ unset https_proxy
 tempest_configuration () {
   sub_name=`date "+%H_%M_%S"`
   # For 2018.4.0 we will use Tempest 15.0.0
-  tempest_version='15.0.0'
+  tempest_version='17.2.0'
   if [ -n "${OFFLINE}" ]; then
     rally verify create-verifier --name tempest_verifier_$sub_name --type tempest --source $TEMPEST_REPO --system-wide --version $tempest_version
     cd /var/lib/
