@@ -19,7 +19,7 @@ RUN git clone https://github.com/openstack/telemetry-tempest-plugin && \
     popd;
 
 RUN git clone https://gerrit.mcp.mirantis.com/packaging/sources/heat-tempest-plugin && \
-    pushd heat-tempest-plugin; git checkout mcp/pike ; pip install -r requirements.txt; \
+    pushd heat-tempest-plugin; git checkout 485e3d18ac4cd432fee798c6429569a84e220e37 ; pip install -r requirements.txt; \
     popd;
 
 RUN pip install --force-reinstall python-cinderclient==3.2.0
