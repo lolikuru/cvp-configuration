@@ -4,7 +4,7 @@ SHELL ["/bin/bash", "-xec"]
 
 USER root
 
-RUN apt-get update; apt-get install -y inetutils-ping curl wget
+RUN apt-get update; apt-get install -y iputils-ping curl wget
 
 WORKDIR /var/lib/
 
@@ -18,8 +18,8 @@ RUN git clone https://github.com/openstack/telemetry-tempest-plugin && \
     pushd telemetry-tempest-plugin; git checkout 7a4bff728fbd8629ec211669264ab645aa921e2b; pip install -r requirements.txt; \
     popd;
 
-RUN git clone https://gerrit.mcp.mirantis.com/packaging/sources/heat-tempest-plugin && \
-    pushd heat-tempest-plugin; git checkout mcp/pike ; pip install -r requirements.txt; \
+RUN git clone https://github.com/openstack/heat-tempest-plugin && \
+    pushd heat-tempest-plugin; git checkout 12b770e923060f5ef41358c37390a25be56634f0; pip install -r requirements.txt; \
     popd;
 
 RUN pip install --force-reinstall python-cinderclient==3.2.0
